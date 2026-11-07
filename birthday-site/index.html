@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Moushomi! ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Hind+Siliguri:wght@500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Floating Balloons & Chocolates Container -->
+    <div id="floating-decor-container"></div>
+
+    <!-- BACKGROUND MUSIC -->
+    <audio id="bg-music" loop>
+        <source src="assets/favorite-song.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- SECTION 1: PASSWORD GATE (DOB) -->
+    <div id="lock-screen" class="screen-wrapper">
+        <div class="grand-card">
+            <div class="icon-header">🔒✨</div>
+            <h1 class="main-title" style="font-family: 'Cinzel', serif; color: #ff758c; font-size: 2rem;">Enter Our Special Date</h1>
+            <p class="body-text" style="margin-top: 10px;">Apni Janam-Tithi daalein (Jaise: 08/11/2004 ya 8112004)</p>
+            <input type="text" id="passcode" placeholder="DD/MM/YYYY" autocomplete="off">
+            <br>
+            <button class="grand-btn" onclick="checkPassword()">Unlock My Heart 💖</button>
+            <p id="error-msg" class="error-text"></p>
+        </div>
+    </div>
+
+    <!-- SECTION 2: MAIN MULTI-FLOW EXPERIENCE -->
+    <div id="main-content" class="screen-wrapper hidden">
+        
+        <!-- FLOW 1: WELCOME -->
+        <div class="flow-step" id="flow-1">
+            <h1 class="script-heading">Happy Birthday, Moushomi! ❤️</h1>
+            <p class="body-text">Yeh chota sa haseen safar sirf aur sirf tumhare liye banaya hai, jahan har ek pal mein sirf hamara pyaar aur ehsaas chhipa hai.</p>
+            <button class="grand-btn glow-effect" onclick="nextFlow(2)">Aage Badhein &rarr;</button>
+        </div>
+
+        <!-- FLOW 2: TIME TOGETHER -->
+        <div class="flow-step hidden" id="flow-2">
+            <h2 class="section-title">⏳ Our Timeless Journey</h2>
+            <div id="timer" class="timer-box"></div>
+            <p class="body-text" style="margin-top: 20px;">Jab se tum meri zindagi mein aayi ho, har ek din kisi jadu ki tarah lagta hai.</p>
+            <div class="btn-row">
+                <button class="secondary-btn" onclick="nextFlow(1)">&larr; Pichhe</button>
+                <button class="grand-btn" onclick="nextFlow(3)">Next Secret &rarr;</button>
+            </div>
+        </div>
+
+        <!-- FLOW 3: 4 EMOTIONAL REASONS (BENGALI) -->
+        <div class="flow-step hidden" id="flow-3">
+            <h2 class="section-title">🌸 Why I Fall For You Every Day</h2>
+            <p class="body-text">Har ek card par click karke padho mere dil ki woh baatein jo sirf tumhare liye hain:</p>
+            <div class="reasons-grid">
+                <div class="reason-card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <div class="card-front">Smriti #1 💌</div>
+                        <div class="card-back bengali-font">যেদিন তোমাকে প্রথম দোকানের সামনে দাঁড়িয়ে থাকতে দেখি, সেদিনই আমি তোমাকে ভালোবেসে ফেলেছিলাম।✨</div>
+                    </div>
+                </div>
+                <div class="reason-card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <div class="card-front">Smriti #2 💌</div>
+                        <div class="card-back bengali-font">তোমার সেই তাকানো আমি আজো ভুলতে পারি না, যখন তুমি আমার দিকে দেখেছিলে ব্রিজ পার করে।✨</div>
+                    </div>
+                </div>
+                <div class="reason-card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <div class="card-front">Smriti #3 💌</div>
+                        <div class="card-back bengali-font">তোমার রাগ আমি নদীর ধারে দেখেছি, সেদিন খুব কষ্ট হয়েছিল আর ভেবেছিলাম তোমাকে আমি কখনো, পাবো না?✨</div>
+                    </div>
+                </div>
+                <div class="reason-card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <div class="card-front">Smriti #4 💌</div>
+                        <div class="card-back bengali-font">শুভ জন্মদিন পরি! খুব ভালো থেকো সারা জীবন সুখী হও, তোমার মনের সব আশা পূরণ হোক।🥰🎂</div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-row" style="margin-top: 20px;">
+                <button class="secondary-btn" onclick="nextFlow(2)">&larr; Pichhe</button>
+                <button class="grand-btn" onclick="nextFlow(4)">The Grand Finale 🎂 &rarr;</button>
+            </div>
+        </div>
+
+        <!-- FLOW 4: GRAND CAKE & PROPOSAL -->
+        <div class="flow-step hidden" id="flow-4">
+            <h1 class="script-heading">A Special Surprise For You! 🎉</h1>
+            <p class="body-text">Ek pyaari si wish maango aur is grand cake ko cut karo, Moushomi.</p>
+            
+            <div class="grand-cake-container" id="cake-container" onclick="cutTheCake()">
+                <div class="birthday-candle">🕯️🔥</div>
+                <div class="tier top-tier"></div>
+                <div class="tier mid-tier"></div>
+                <div class="tier base-tier"></div>
+                <div class="cut-prompt">🎂 Tap Here to Cut Cake!</div>
+            </div>
+
+            <div id="proposal-box" class="hidden">
+                <h2 class="script-heading" style="color: #ff3366; font-size: 2.3rem;">I Love You Forever & Always, Moushomi! ❤️</h2>
+                <p class="body-text" style="font-size: 1.15rem; color: #ffccd5; margin: 15px 0;">Will you stay with me, marry me, and be mine for all the lifetimes to come? 💍✨</p>
+                <button class="grand-btn glow-effect" onclick="sayYes()">YES, A Thousand Times Yes! 🥰</button>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <button class="music-toggle-btn" onclick="toggleMusic()">🎵 Play / Pause Our Song</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
